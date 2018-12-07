@@ -132,5 +132,34 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Creating Reviews ..."
+Review.destroy_all
+
+prod1 = Product.find_by(id: 12)
+prod2 = Product.find_by(id: 6)
+prod3 = Product.find_by(id: 4)
+prod4 = Product.find_by(id: 8)
+
+prod1.reviews.create!({
+  rating: 3,
+  description: Faker::Hipster.paragraph(4)
+})
+
+prod2.reviews.create!({
+  rating: 5,
+  description: Faker::Hipster.paragraph(4)
+})
+
+prod3.reviews.create!({
+  rating: 4,
+  description: Faker::Hipster.paragraph(4)
+})
+
+prod4.reviews.create!({
+  rating: 2,
+  description: Faker::Hipster.paragraph(4)
+})
+
+
 
 puts "DONE!"
