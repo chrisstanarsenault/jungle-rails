@@ -1,0 +1,16 @@
+</head>
+  <body>
+    <h1>Thank you for your order!</h1>
+    <p>
+    Here is a recap for your order
+    ===============================
+
+     <% @order.line_items.each do |item| %>
+      <ul>Product ": " <%= item.product.name %></ul>
+      <ul>Quantity ": " <%= item.quantity %></ul>
+      <ul>Price ": " <%= item.product.price %></ul>
+      <% end %>
+
+    </p>
+  </body>
+</html>
