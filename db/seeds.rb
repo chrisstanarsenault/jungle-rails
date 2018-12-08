@@ -140,25 +140,20 @@ prod2 = Product.find_by(id: 6)
 prod3 = Product.find_by(id: 4)
 prod4 = Product.find_by(id: 8)
 
-prod1.reviews.create!({
-  rating: 3,
-  description: Faker::Hipster.paragraph(4)
-})
+user = User.create!(
+  name: "chris",
+  email: "chrisstanarsenault@gmail.com",
+  password_digest: BCrypt::Password.create('rainstorm4')
+)
 
-prod2.reviews.create!({
-  rating: 5,
-  description: Faker::Hipster.paragraph(4)
-})
-
-prod3.reviews.create!({
-  rating: 4,
-  description: Faker::Hipster.paragraph(4)
-})
-
-prod4.reviews.create!({
-  rating: 2,
-  description: Faker::Hipster.paragraph(4)
-})
+30.times do
+  Review.create!(
+    product_id: rand(1..12),
+    user_id: 1,
+    description: Faker::TvShows::RickAndMorty.quote,
+    rating: rand(1..5)
+  )
+end
 
 
 

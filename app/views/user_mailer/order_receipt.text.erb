@@ -1,0 +1,8 @@
+Here is a recap for your order
+    ===============================
+
+<% @order.line_items.each do |item| %>
+Product ": " <%= item.product.name %>
+Quantity ": " <%= item.quantity %>
+Price ": " <%= item.product.price %>
+<% end %>
