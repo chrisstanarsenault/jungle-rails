@@ -40,8 +40,10 @@ gem 'faker', github: 'stympy/faker'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+
+  # gem 'byebug'
   gem 'quiet_assets'
   gem 'dotenv-rails'
 end
